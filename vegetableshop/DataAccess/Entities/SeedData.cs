@@ -235,7 +235,7 @@ namespace vegetableshop.DataAccess.Entities
         public void SeedDataRealImages()
         {
             var list = context.Realvegetables.ToList();
-            var fileArray = Directory.GetFiles("access/images/real/", "*.jpg", SearchOption.AllDirectories).ToList();
+            var fileArray = Directory.GetFiles("wwwroot/access/images/real/", "*.jpg", SearchOption.AllDirectories).ToList();
             Random random = new Random();
             for (int i = 0; i < 100; i++)
             {

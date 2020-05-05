@@ -13,6 +13,18 @@ namespace vegetableshop.Controllers
         public VegetableController(vegetableshopContext context)
         {
             this._context = context;
+            SeedData seedData = new SeedData();
+
+            //seedData.SeedDataVegetable();
+            //seedData.Save();
+            //seedData.SeedDataRealVegetable();
+            //seedData.Save();
+
+             seedData.SeedDataVipImages();
+            seedData.Save();
+
+            seedData.SeedDataRealImages();
+            seedData.Save();
         }
 
         [HttpGet]

@@ -5,6 +5,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using vegetableshop.DataAccess.Entities;
+using vegetableshop.DataAccess.Repositories;
+using vegetableshop.Services;
 
 namespace vegetableshop
 {
@@ -24,6 +26,11 @@ namespace vegetableshop
             services.AddControllers();
             services.AddDbContext<vegetableshopContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("vegetableshopContext")));
+
+            #region Dependencies Injection
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

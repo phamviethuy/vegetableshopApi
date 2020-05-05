@@ -23,29 +23,16 @@ namespace vegetableshop.Controllers
             _logger = logger;
             SeedData seedData = new SeedData();
 
-            //seedData.SeedDataVegetable();
-            //seedData.Save();
-            //seedData.SeedDataRealVegetable();
-            //seedData.Save();
+            seedData.SeedDataVegetable();
+            seedData.Save();
+            seedData.SeedDataRealVegetable();
+            seedData.Save();
 
-            //seedData.SeedDataVipImages();
-           // seedData.Save();
+            seedData.SeedDataVipImages();
+            seedData.Save();
 
-            //seedData.SeedDataRealImages();
-            //seedData.Save();
-        }
-
-        [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
-        {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+            seedData.SeedDataRealImages();
+            seedData.Save();
         }
     }
 }
